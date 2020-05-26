@@ -1,0 +1,19 @@
+{
+  "name": "palm-island",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smourph/palm-island.git"
+  },
+  "author": "Julien De Conti <julien.de.conti@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/smourph/palm-island/issues"
+  },
+  "homepage": "https://github.com/smourph/palm-island#readme"
+}
