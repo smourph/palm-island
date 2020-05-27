@@ -1,0 +1,35 @@
+.vsplit {
+  height: 100%;
+  position: fixed;
+  padding: 6px;
+}
+.hsplit {
+  width: 100%;
+  position: relative;
+}
+.top {
+  height: 65%;
+  /* border: solid; */
+  top: 0;
+  /*   background: yellow; */
+}
+.bottom {
+  height: 35%;
+  /* border: solid; */
+  top: 0;
+  /*   background: green; */
+}
+.left {
+  width: 30%;
+  /* border: solid; */
+  margin: 8px;
+  left: 0;
+  /*   background: blue; */
+}
+.right {
+  /* border: solid; */
+  margin: 8px;
+  right: 0;
+  /*   background: red; */
+  width: 70%;
+}

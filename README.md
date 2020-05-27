@@ -1,36 +1,58 @@
-# Palm Island
+![Header](src/assets/UdaipurCover.png)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Udaipur
 
-## Getting Started
+A minimalistic clone of the popular 2-player card trading board game [Jaipur](https://boardgamegeek.com/boardgame/54043/jaipur) with **Online Multiplayer** support built using [boardgame.io](github.com/nicoldavis/boardgame.io) and React JS.  
 
-First, run the development server:
+You can try out the game at https://udaipur-game.herokuapp.com/ (It can be a bit slow to load initially since it's currently running on a free dyno).  
+   
+Jaipur on [BoardGameGeek](https://boardgamegeek.com/boardgame/54043/jaipur)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About the Game
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Jaipur is a 2 player, trading card game where you and your opponent are traders and are trying to make the most money, buying and selling resources from the market. Resources initially sell for a larger amount and start to yield lesser money as more of them get sold in the market.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+However not all resources have the same availability and selling price along with Rare Resources having the added constraint of needing to be sold in a group of atleast 2 cards at a time.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+In the game of Jaipur, players have to strike a balance between trying to trade rarer resources which sell for more(such as Gold, Diamond and Silver) and the more abundant resources which sell for less(Leather, Spices and Silk).
 
-## Learn More
+For a more comprehensive explanation of the rules, watch the game guide here:  
+[![Jaipur - Rules](https://img.youtube.com/vi/SD3g4gOf_N8/0.jpg)](https://www.youtube.com/watch?v=SD3g4gOf_N8).
 
-To learn more about Next.js, take a look at the following resources:
+You can also find help within the Udaipur Website under [Game Help](https://udaipur-game.herokuapp.com/help)
+The only departure from the original rules in Udaipur is the removal of the **Seal of Excellence** tokens to simplify and shorten the game.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Run `npm install` to install the necessary packages
+- Run `npm run client` to run the front-end client
+- Run `npm run server` to run the game server
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Set `APP_PRODUCTION=true` in **src/config.js**
+- Run `npm run start` to deploy the app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Deploy to **Heroku** with the button below.  
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/skvrahul/udaipur-game/tree/deploy_heroku)
+
+## Future Additions
+ - [ ] Player Scoreboard while playing
+ - [ ] Player move history in a sidebar
+ - [ ] Use boardgame.io's STRIP_SECRETS to ensure the Client doesn't receive extra information about the opponent
+ - [ ] Clearer way to represent players receiving token(s)
+ 
+## Screenshots
+
+### Home Page
+
+![Home Page](demo/udaipur_homePage.gif)
+
+### Lobby
+
+![Lobby](demo/udaipur_lobby.png)
+
+### Game Board
+
+![Game Board](demo/udaipur_board.png)
