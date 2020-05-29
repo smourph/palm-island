@@ -2,7 +2,13 @@
 ##         Custom rules         ##
 ##################################
 
+# ignore the entire intelliJ folder
 .idea/
+
+# ignore node_modules.nosync folder used to prevent icloud to sync this folder
+# renaming and symlink created with "nosync-node" or "nsn" cmd
+# npm install -g icloud-nosync-node
+node_modules.nosync
 
 ##################################
 ##       www.gitignore.io       ##
