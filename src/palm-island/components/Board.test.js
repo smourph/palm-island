@@ -8,6 +8,5 @@ test('should render Board', () => {
   const board = container.firstChild;
   expect(board).toBeInTheDocument();
   expect(board).toBeVisible();
-  expect(board).toBeEmptyDOMElement();
   expect(board).toHaveClass('board');
 });
