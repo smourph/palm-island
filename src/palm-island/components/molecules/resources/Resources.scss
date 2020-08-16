@@ -1,0 +1,23 @@
+.resources {
+  .resources-bunch {
+    + .resources-bunch {
+      margin-left: 4px;
+    }
+  }
+
+  .resources-quantity {
+    + .resources-quantity {
+      margin-left: 5px;
+    }
+
+    .quantity {
+      + .logo-resource {
+        margin-left: 0;
+      }
+
+      + .resource.stone {
+        margin-left: 4px;
+      }
+    }
+  }
+}
