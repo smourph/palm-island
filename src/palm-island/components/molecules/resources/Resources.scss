@@ -1,7 +1,7 @@
 .resources {
   .resources-bunch {
     + .resources-bunch {
-      margin-left: 4px;
+      margin-left: 5px;
     }
   }
 
@@ -12,11 +12,7 @@
 
     .quantity {
       + .logo-resource {
-        margin-left: 0;
-      }
-
-      + .resource.stone {
-        margin-left: 4px;
+        margin-left: 2px;
       }
     }
   }

@@ -10,8 +10,8 @@ it('should render snapshot', () => {
 it('should render wood', () => {
   render(<Wood/>);
 
-  const icon = screen.getByRole('img', {hidden: true});
+  const icon = screen.getByAltText('wood');
   expect(icon).toBeInTheDocument();
   expect(icon).toBeVisible();
-  expect(icon).toHaveAttribute('data-icon', 'tree');
+  expect(icon).toHaveAttribute('src', 'logo-wood.png');
 });

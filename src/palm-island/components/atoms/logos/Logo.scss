@@ -1,17 +1,6 @@
 .logo {
-  &.logo-resource {
-    + .logo-resource {
-      &.logo-wood {
-        margin-left: -4px;
-      }
-
-      &.logo-fish {
-        margin-left: -5px;
-      }
-
-      &.logo-stone {
-        margin-left: 1px;
-      }
-    }
+  img {
+    max-height: 25px;
+    vertical-align: middle;
   }
 }

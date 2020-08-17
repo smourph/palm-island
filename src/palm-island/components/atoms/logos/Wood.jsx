@@ -1,11 +1,10 @@
 import React from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faTree} from '@fortawesome/free-solid-svg-icons';
+import wood from '@internal/resources/images/logo-wood.png';
 import './Logo.scss';
 
 export const Wood = () => (
   <span className="logo logo-resource logo-wood">
-    <FontAwesomeIcon icon={faTree} fixedWidth/>
+    <img src={wood} alt="wood"/>
   </span>
 );
 

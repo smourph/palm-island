@@ -6,39 +6,36 @@ describe('Display a bunch of resources', () => {
   it('should render a bunch of woods', () => {
     render(<Resources wood={5}/>);
 
-    const woods = screen.getAllByRole('img', {hidden: true});
+    const woods = screen.getAllByAltText('wood');
     expect(woods).toHaveLength(5);
 
     for (const wood of woods) {
       expect(wood).toBeInTheDocument();
       expect(wood).toBeVisible();
-      expect(wood).toHaveAttribute('data-icon', 'tree');
     }
   });
 
   it('should render a bunch of fish', () => {
     render(<Resources fish={4}/>);
 
-    const fish = screen.getAllByRole('img', {hidden: true});
+    const fish = screen.getAllByAltText('fish');
     expect(fish).toHaveLength(4);
 
     for (const aFish of fish) {
       expect(aFish).toBeInTheDocument();
       expect(aFish).toBeVisible();
-      expect(aFish).toHaveAttribute('data-icon', 'fish');
     }
   });
 
   it('should render a bunch of stones', () => {
     render(<Resources stone={3}/>);
 
-    const stones = screen.getAllByRole('img', {hidden: true});
+    const stones = screen.getAllByAltText('stone');
     expect(stones).toHaveLength(3);
 
     for (const stone of stones) {
       expect(stone).toBeInTheDocument();
       expect(stone).toBeVisible();
-      expect(stone).toHaveAttribute('data-icon', 'gem');
     }
   });
 
@@ -48,25 +45,14 @@ describe('Display a bunch of resources', () => {
       fish={3}
       stone={4}/>);
 
-    const icons = screen.getAllByRole('img', {hidden: true});
-    expect(icons).toHaveLength(9);
+    const woods = screen.getAllByAltText('wood');
+    expect(woods).toHaveLength(2);
 
-    for (const icon of icons) {
-      expect(icon).toBeInTheDocument();
-      expect(icon).toBeVisible();
-    }
+    const fish = screen.getAllByAltText('fish');
+    expect(fish).toHaveLength(3);
 
-    for (let i = 0; i < 2; i++) {
-      expect(icons[0]).toHaveAttribute('data-icon', 'tree');
-    }
-
-    for (let i = 2; i < 5; i++) {
-      expect(icons[i]).toHaveAttribute('data-icon', 'fish');
-    }
-
-    for (let i = 5; i < 9; i++) {
-      expect(icons[i]).toHaveAttribute('data-icon', 'gem');
-    }
+    const stones = screen.getAllByAltText('stone');
+    expect(stones).toHaveLength(4);
   });
 
   it('should render a bunch of resources with an empty resource', () => {
@@ -75,25 +61,18 @@ describe('Display a bunch of resources', () => {
       fish={0}
       stone={2}/>);
 
-    const icons = screen.getAllByRole('img', {hidden: true});
-    expect(icons).toHaveLength(7);
+    const woods = screen.getAllByAltText('wood');
+    expect(woods).toHaveLength(5);
 
-    for (const icon of icons) {
-      expect(icon).toBeInTheDocument();
-      expect(icon).toBeVisible();
-    }
+    const fish = screen.queryAllByText('fish');
+    expect(fish).toHaveLength(0);
 
-    for (let i = 0; i < 5; i++) {
-      expect(icons[0]).toHaveAttribute('data-icon', 'tree');
-    }
-
-    for (let i = 5; i < 7; i++) {
-      expect(icons[i]).toHaveAttribute('data-icon', 'gem');
-    }
+    const stones = screen.getAllByAltText('stone');
+    expect(stones).toHaveLength(2);
   });
 });
 
-describe('Display resource and quantity number', () => {
+describe('Display icon and quantity number', () => {
   it('should render one wood icon and quantity number', () => {
     render(<Resources
       wood={6}
@@ -103,10 +82,9 @@ describe('Display resource and quantity number', () => {
     expect(number).toBeInTheDocument();
     expect(number).toBeVisible();
 
-    const wood = screen.getByRole('img', {hidden: true});
+    const wood = screen.getByAltText('wood');
     expect(wood).toBeInTheDocument();
     expect(wood).toBeVisible();
-    expect(wood).toHaveAttribute('data-icon', 'tree');
   });
 
   it('should render one fish icon and quantity number', () => {
@@ -118,10 +96,9 @@ describe('Display resource and quantity number', () => {
     expect(number).toBeInTheDocument();
     expect(number).toBeVisible();
 
-    const fish = screen.getByRole('img', {hidden: true});
+    const fish = screen.getByAltText('fish');
     expect(fish).toBeInTheDocument();
     expect(fish).toBeVisible();
-    expect(fish).toHaveAttribute('data-icon', 'fish');
   });
 
   it('should render one stone icon and quantity number', () => {
@@ -133,10 +110,9 @@ describe('Display resource and quantity number', () => {
     expect(number).toBeInTheDocument();
     expect(number).toBeVisible();
 
-    const stone = screen.getByRole('img', {hidden: true});
+    const stone = screen.getByAltText('stone');
     expect(stone).toBeInTheDocument();
     expect(stone).toBeVisible();
-    expect(stone).toHaveAttribute('data-icon', 'gem');
   });
 
   it('should render multiple icons and quantity numbers', () => {
@@ -150,25 +126,25 @@ describe('Display resource and quantity number', () => {
     expect(numberWood).toBeInTheDocument();
     expect(numberWood).toBeVisible();
 
+    const wood = screen.getByAltText('wood');
+    expect(wood).toBeInTheDocument();
+    expect(wood).toBeVisible();
+
     const numberFish = screen.getByText('4');
     expect(numberFish).toBeInTheDocument();
     expect(numberFish).toBeVisible();
+
+    const fish = screen.getByAltText('fish');
+    expect(fish).toBeInTheDocument();
+    expect(fish).toBeVisible();
 
     const numberStone = screen.getByText('3');
     expect(numberStone).toBeInTheDocument();
     expect(numberStone).toBeVisible();
 
-    const icons = screen.getAllByRole('img', {hidden: true});
-    expect(icons).toHaveLength(3);
-
-    for (const icon of icons) {
-      expect(icon).toBeInTheDocument();
-      expect(icon).toBeVisible();
-    }
-
-    expect(icons[0]).toHaveAttribute('data-icon', 'tree');
-    expect(icons[1]).toHaveAttribute('data-icon', 'fish');
-    expect(icons[2]).toHaveAttribute('data-icon', 'gem');
+    const stone = screen.getByAltText('stone');
+    expect(stone).toBeInTheDocument();
+    expect(stone).toBeVisible();
   });
 
   it('should render multiple icons and quantity numbers with an empty resource', () => {
@@ -182,22 +158,22 @@ describe('Display resource and quantity number', () => {
     expect(numberWood).toBeInTheDocument();
     expect(numberWood).toBeVisible();
 
+    const wood = screen.getByAltText('wood');
+    expect(wood).toBeInTheDocument();
+    expect(wood).toBeVisible();
+
     const numberFish = screen.queryByText('0');
     expect(numberFish).toBeNull();
+
+    const fish = screen.queryByAltText('fish');
+    expect(fish).toBeNull();
 
     const numberStone = screen.getByText('4');
     expect(numberStone).toBeInTheDocument();
     expect(numberStone).toBeVisible();
 
-    const icons = screen.getAllByRole('img', {hidden: true});
-    expect(icons).toHaveLength(2);
-
-    for (const icon of icons) {
-      expect(icon).toBeInTheDocument();
-      expect(icon).toBeVisible();
-    }
-
-    expect(icons[0]).toHaveAttribute('data-icon', 'tree');
-    expect(icons[1]).toHaveAttribute('data-icon', 'gem');
+    const stone = screen.getByAltText('stone');
+    expect(stone).toBeInTheDocument();
+    expect(stone).toBeVisible();
   });
 });
