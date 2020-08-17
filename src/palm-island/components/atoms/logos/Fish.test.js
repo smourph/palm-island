@@ -10,8 +10,8 @@ it('should render snapshot', () => {
 it('should render fish', () => {
   render(<Fish/>);
 
-  const icon = screen.getByRole('img', {hidden: true});
+  const icon = screen.getByAltText('fish');
   expect(icon).toBeInTheDocument();
   expect(icon).toBeVisible();
-  expect(icon).toHaveAttribute('data-icon', 'fish');
+  expect(icon).toHaveAttribute('src', 'logo-fish.png');
 });

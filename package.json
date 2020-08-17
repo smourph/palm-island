@@ -5,9 +5,7 @@
   "private": true,
   "dependencies": {
     "@internal/library": "file:src/palm-island/library",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@internal/resources": "file:src/palm-island/resources",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",

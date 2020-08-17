@@ -10,8 +10,8 @@ it('should render snapshot', () => {
 it('should render stone', () => {
   render(<Stone/>);
 
-  const icon = screen.getByRole('img', {hidden: true});
+  const icon = screen.getByAltText('stone');
   expect(icon).toBeInTheDocument();
   expect(icon).toBeVisible();
-  expect(icon).toHaveAttribute('data-icon', 'gem');
+  expect(icon).toHaveAttribute('src', 'logo-stone-small.png');
 });
