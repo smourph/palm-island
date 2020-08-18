@@ -1,0 +1,11 @@
+.resource-quantity {
+  + .resource-quantity {
+    margin-left: 5px;
+  }
+
+  .quantity {
+    + .logo-resource {
+      margin-left: 2px;
+    }
+  }
+}
