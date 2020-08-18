@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Client} from 'boardgame.io/react';
+import Game from './palm-island/Game';
+import Board from './palm-island/components/Board';
+
+const AppGame = Client({
+  game: Game,
+  board: Board,
+  numPlayers: 1,
+  debug: false
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <h1>Palm Island</h1>
+      <div role="main" className="app">
+        <AppGame gameID="palm-island" playerID="0"/>
+      </div>
+    </React.Fragment>
   );
 }
 

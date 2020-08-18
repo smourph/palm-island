@@ -1,9 +1,17 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('should render App', () => {
+  render(<App/>);
+
+  const heading = screen.getByRole('heading');
+  expect(heading).toBeInTheDocument();
+  expect(heading).toBeVisible();
+  expect(heading).toHaveTextContent(/Palm Island/);
+
+  const game = screen.getByRole('main');
+  expect(game).toBeInTheDocument();
+  expect(game).toBeVisible();
+  expect(game).toHaveClass('app');
 });
