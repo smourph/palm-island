@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Resources from './molecules/resources/Resources';
+import ResourcesBunch from './molecules/resources/ResourcesBunch';
+import ResourcesCost from './molecules/resources/ResourcesCost';
 import {
   aBunchOfFishes,
   aBunchOfResources,
@@ -12,21 +13,21 @@ import {
 export const Board = ({G, ctx, events, moves}) => {
   return (
     <div className="board">
-      <Resources {...anEmptyBunchOfResources()}/><br/>
-      <Resources {...aBunchOfWoods(2)}/><br/>
-      <Resources {...aBunchOfFishes(2)}/><br/>
-      <Resources {...aBunchOfStones(2)}/><br/>
-      <Resources {...aBunchOfResources(1, 1, 1)}/><br/>
-      <Resources {...aBunchOfResources(2, 3, 4)}/><br/>
-      <Resources {...aBunchOfResources(4, 0, 2)}/><br/>
+      <ResourcesBunch {...anEmptyBunchOfResources()}/><br/>
+      <ResourcesBunch {...aBunchOfWoods(1)}/><br/>
+      <ResourcesBunch {...aBunchOfFishes(2)}/><br/>
+      <ResourcesBunch {...aBunchOfStones(3)}/><br/>
+      <ResourcesBunch {...aBunchOfResources(1, 1, 1)}/><br/>
+      <ResourcesBunch {...aBunchOfResources(2, 3, 4)}/><br/>
+      <ResourcesBunch {...aBunchOfResources(4, 0, 2)}/><br/>
       <br/>
-      <Resources {...anEmptyBunchOfResources()} showQuantityNumber={true}/><br/>
-      <Resources {...aBunchOfWoods(2)} showQuantityNumber={true}/><br/>
-      <Resources {...aBunchOfFishes(2)} showQuantityNumber={true}/><br/>
-      <Resources {...aBunchOfStones(2)} showQuantityNumber={true}/><br/>
-      <Resources {...aBunchOfResources(1, 1, 1)} showQuantityNumber={true}/><br/>
-      <Resources {...aBunchOfResources(2, 3, 4)} showQuantityNumber={true}/><br/>
-      <Resources {...aBunchOfResources(4, 0, 2)} showQuantityNumber={true}/><br/>
+      <ResourcesCost {...anEmptyBunchOfResources()}/><br/>
+      <ResourcesCost {...aBunchOfWoods(1)}/><br/>
+      <ResourcesCost {...aBunchOfFishes(2)}/><br/>
+      <ResourcesCost {...aBunchOfStones(3)}/><br/>
+      <ResourcesCost {...aBunchOfResources(1, 1, 1)}/><br/>
+      <ResourcesCost {...aBunchOfResources(2, 3, 4)}/><br/>
+      <ResourcesCost {...aBunchOfResources(4, 0, 2)}/><br/>
     </div>
   );
 };
