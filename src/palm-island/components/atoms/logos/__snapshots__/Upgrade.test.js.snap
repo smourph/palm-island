@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render snapshot 1`] = `
+<span
+  class="logo logo-common logo-upgrade"
+>
+  <img
+    alt="upgrade"
+    src="logo-upgrade.png"
+  />
+</span>
+`;

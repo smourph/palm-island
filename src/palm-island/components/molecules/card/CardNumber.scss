@@ -1,0 +1,25 @@
+$size: 25px;
+
+.card-number {
+  position: relative;
+  height: $size;
+  width: $size;
+  display: flex;
+
+  .logo {
+    position: absolute;
+    z-index: 1;
+
+    img {
+      height: $size;
+      width: $size;
+    }
+  }
+
+  .number {
+    position: absolute;
+    z-index: 2;
+    padding: 0 3px;
+    font-size: 14px;
+  }
+}

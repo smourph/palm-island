@@ -1,0 +1,12 @@
+.card {
+  height: 360px; // debug
+  width: 720px; // debug
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 6px;
+  background: white;
+  border: solid black;
+  border-radius: 8px;
+  cursor: pointer;
+}
