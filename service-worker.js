@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/palm-island/precache-manifest.98a3db30cc54b4d25a6d16370a7c6f4f.js"
+  "/palm-island/precache-manifest.bf33b5f1db2da99c302476ed366aec85.js"
 );
 
 self.addEventListener('message', (event) => {
