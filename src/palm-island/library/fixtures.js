@@ -18,3 +18,13 @@ export const anAction = (type, costOptions) => ({
   type: type ? type : ACTION.STORE,
   costOptions: costOptions ? costOptions : [anEmptyBunchOfResources()]
 });
+
+export const aCard = custom => ({
+  number: 1,
+  name: 'Card',
+  stock: anEmptyBunchOfResources(),
+  victoryPoints: 1,
+  improvementsLevel: 1,
+  actions: [anAction()],
+  ...custom
+});
