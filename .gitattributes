@@ -208,3 +208,7 @@ Procfile          text
 
 # Ignore files (like .npmignore or .gitignore)
 *.*ignore         text
+
+# yarn v2 with Zero-Installs
+/.yarn/releases/** binary
+/.yarn/plugins/**  binary
