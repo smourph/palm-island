@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - node
+  - 18
+cache: npm
+script:
+  - yarn test
+  - yarn run build
+branches:
+  except:
+    - gh-pages
+    - /^example\/.+$/
