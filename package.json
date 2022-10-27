@@ -1,0 +1,8 @@
+{
+  "name": "palm-island",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:smourph/palm-island.git",
+  "author": "Julien De Conti <julien.de.conti@gmail.com>",
+  "license": "GPL-3.0"
+}
