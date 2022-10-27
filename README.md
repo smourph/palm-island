@@ -1,5 +1,9 @@
 # Palm Island
 
+[![Build Status](https://travis-ci.org/smourph/palm-island.svg?branch=master)](https://travis-ci.org/smourph/palm-island)
+[![Dependency Status](https://david-dm.org/smourph/palm-island.svg)](https://david-dm.org/smourph/palm-island)
+[![devDependency Status](https://david-dm.org/smourph/palm-island/dev-status.svg)](https://david-dm.org/smourph/palm-island#info=devDependencies)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 [Play on github.io](https://smourph.github.io/palm-island/)
