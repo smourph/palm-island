@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index should render 1`] = `
+<div>
+  <div>
+    <div
+      class="bgio-client"
+    >
+      <div>
+        <table
+          id="board"
+        >
+          <tbody>
+            <tr>
+              <td
+                style="border: 1px solid #555; width: 50px; height: 50px; line-height: 50px; text-align: center;"
+              />
+              <td
+                style="border: 1px solid #555; width: 50px; height: 50px; line-height: 50px; text-align: center;"
+              />
+              <td
+                style="border: 1px solid #555; width: 50px; height: 50px; line-height: 50px; text-align: center;"
+              />
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #555; width: 50px; height: 50px; line-height: 50px; text-align: center;"
+              />
+              <td
+                style="border: 1px solid #555; width: 50px; height: 50px; line-height: 50px; text-align: center;"
+              />
+              <td
+                style="border: 1px solid #555; width: 50px; height: 50px; line-height: 50px; text-align: center;"
+              />
+            </tr>
+            <tr>
+              <td
+                style="border: 1px solid #555; width: 50px; height: 50px; line-height: 50px; text-align: center;"
+              />
+              <td
+                style="border: 1px solid #555; width: 50px; height: 50px; line-height: 50px; text-align: center;"
+              />
+              <td
+                style="border: 1px solid #555; width: 50px; height: 50px; line-height: 50px; text-align: center;"
+              />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <footer>
+      <hr />
+      <span>
+        Palm Island game
+      </span>
+    </footer>
+  </div>
+</div>
+`;

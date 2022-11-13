@@ -255,6 +255,7 @@ web_modules/
 # Next.js build output
 .next
 out
+.swc
 
 # Nuxt.js build / generate output
 .nuxt
@@ -354,6 +355,7 @@ $RECYCLE.BIN/
 # next.js
 /.next/
 /out/
+/.swc/
 
 # production
 /build
