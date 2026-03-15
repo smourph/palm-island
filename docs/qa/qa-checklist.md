@@ -11,6 +11,7 @@
 Cette checklist QA couvre les exigences fonctionnelles de `docs/specifications/functional-specification.md`.
 
 Objectifs:
+
 - verifier les cas nominaux,
 - verifier les cas limites,
 - assurer la couverture fonctionnelle complete,
@@ -158,6 +159,7 @@ Definir un corpus de parties de reference ("golden runs"):
 - `GR-007` Partie avec Villageois actifs et passifs
 
 Critere:
+
 - Etat final et resultat de chaque partie de reference doivent rester identiques d'une version a l'autre, sauf changement de regle explicitement approuve.
 
 ---
@@ -179,18 +181,23 @@ Verifier la coherence visuelle des etats critiques:
 ## 7. Checklist de completion par lot (roadmap QA)
 
 ## Lot QA-F1 (coeur solo)
+
 - `QA-SETUP-*`, `QA-ACT-*`, `QA-PAY-*`, `QA-STO-*`, `QA-TURN-*`, `QA-SCORE-001..002`, `QA-SOLO-001`
 
 ## Lot QA-F2 (2 joueurs + coop)
+
 - `QA-2P-*`, `QA-COOP-*`, `QA-SCORE-003..005`
 
 ## Lot QA-F3 (competitif)
+
 - `QA-COMP-D-*`, `QA-COMP-V-*`
 
 ## Lot QA-F4 (modules avances)
+
 - `QA-SOLO-002..004`, `QA-VIL-*`, `QA-MP-*`
 
 ## Lot QA-F5 (stabilisation)
+
 - `GR-*`, `QA-VIS-*`, couverture `COV-*` complete
 
 ---
@@ -216,7 +223,7 @@ La version est QA-ready si:
 - `RISK-005` Defaut d'explicabilite utilisateur sur action invalide.
 
 Actions preventives:
+
 - maintenir la tracabilite REQ <-> QA,
 - valider les points ambigus avant implementation,
 - maintenir les golden runs et la non-regression visuelle.
-

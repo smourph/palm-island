@@ -101,10 +101,12 @@ Le document est volontairement non technique: il ne prescrit ni framework, ni ar
 ## 7.1 Actions possibles
 
 A chaque tour, le joueur peut:
+
 1. Executer une action sur l'une des deux premieres cartes du paquet,
 2. Ou defausser la premiere carte du paquet.
 
 Exigences:
+
 - `REQ-100` Le systeme doit presenter les actions legalement disponibles.
 - `REQ-101` La deuxieme carte ne peut jamais etre defaussee directement.
 - `REQ-102` Si aucune action n'est possible sur les deux cartes, la defausse de la premiere est obligatoire.
@@ -112,15 +114,18 @@ Exigences:
 ## 7.2 Types d'actions
 
 ### A. Stocker
+
 - `REQ-110` Le cout doit etre paye avant stockage.
 - `REQ-111` La carte est reorientee selon la regle de stockage puis placee au dos du paquet.
 - `REQ-112` Les ressources stockees doivent rester lisibles/identifiables.
 
 ### B. Pivoter
+
 - `REQ-120` Le cout doit etre paye avant pivot.
 - `REQ-121` La carte est pivotee selon la regle puis placee au dos du paquet.
 
 ### C. Retourner
+
 - `REQ-130` Le cout doit etre paye avant retournement.
 - `REQ-131` La carte est retournee selon la regle puis placee au dos du paquet.
 
@@ -172,6 +177,7 @@ Exigences:
 - `REQ-203` Les Trophees debloques peuvent etre reutilises dans parties futures selon les restrictions de difficulte.
 
 ### Difficulte solo
+
 - `REQ-210` Facile: utilisation libre des Trophees debloques.
 - `REQ-211` Normal: limite a 1 Trophee utilise.
 - `REQ-212` Difficile: aucun Trophee utilise.
@@ -192,6 +198,7 @@ Exigences:
 - `REQ-235` Le score de groupe correspond au score individuel le plus faible.
 
 ### Capacites cooperatives
+
 - `REQ-236` Une carte de capacite cooperative peut etre activee selon la regle de mode.
 - `REQ-237` Une capacite coop amelioree est utilisable par tous les joueurs selon sa frequence autorisee.
 
@@ -279,12 +286,14 @@ Exigences:
 ## 11. Tables de classement officielles
 
 ## 11.1 Solo
+
 - 10-19: Encore du boulot
 - 20-29: Respectable
 - 30-39: Exceptionnel
 - 40+: Incroyable
 
 ## 11.2 Cooperatif
+
 - 1-9: Encore du boulot
 - 10-19: Respectable
 - 20-29: Exceptionnel
@@ -306,28 +315,33 @@ Decision requise: toute ambiguite doit etre resolue par une decision produit exp
 ## 13. Roadmap fonctionnelle de reference
 
 ## Lot F-1: Coeur jouable solo
+
 - Setup
 - Actions/paiement/stockage
 - Suivi 8 tours
 - Decompte solo
 
 ## Lot F-2: 2 joueurs + coop
+
 - Simultaneite
 - Desastres
 - Capacites coop
 
 ## Lot F-3: Competitif complet
+
 - Decontracte
 - Vitesse
 - Avant-postes
 
 ## Lot F-4: Modules avances
+
 - Trophees
 - Difficultes solo
 - Villageois
 - 3+ joueurs
 
 ## Lot F-5: Stabilisation fonctionnelle
+
 - Validation regles complete
 - Validation cas limites
 - Gel fonctionnel v1.0
@@ -343,4 +357,3 @@ Une version est consideree conforme si:
 3. Les flux de partie completes sont jouables sans blocage.
 4. Le calcul de resultat est conforme au mode.
 5. Les ambiguities liees au lot sont resolues (`AMB-*`).
-

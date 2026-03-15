@@ -1,56 +1,89 @@
 # AGENTS.md
 
 ## Project map (what matters first)
-- This is a **Next.js + TypeScript** UI that embeds a **boardgame.io** game client.
-- Entry page: `pages/index.tsx` creates `PalmIslandClient` with `Client({ game, numPlayers, board })` and renders it inside `components/Layout.tsx`.
-- Game rules/state live in `module/game/PalmIsland.ts` (pure game logic + boardgame.io config).
-- Rendering logic lives in `components/Board.tsx` (reads `G`/`ctx`, calls `moves.clickCell`).
-- Utility helpers are minimal; currently `utils.ts` exposes `range` used by board rendering loops.
+
+- This is a **Vue 3 + TypeScript** app bootstrapped with **Vite**.
+- Entry point: `src/main.ts` mounts the app with `createApp(App).mount('#app')`.
+- Main UI lives in `src/App.vue` (current starter screen with title/subtitle).
+- Global app styles are in `src/style.css`; component-scoped styles remain in each `.vue` file.
+- Product/QA references for Palm Island live in `docs/specifications/`, `docs/qa/`, and `docs/traceability/`.
 
 ## Data flow and boundaries
-- **Source of truth for gameplay** is `G.cells` (`PalmIslandState`) in `module/game/PalmIsland.ts`.
-- `clickCell` is the critical move function; it rejects occupied cells via `INVALID_MOVE`.
-- `endIf` computes terminal state (`{ winner }` or `{ draw: true }`) from board state.
-- UI should not mutate state directly; UI triggers `moves.*` only (see `components/Board.tsx`).
-- Board winner banner depends on `ctx.gameover` (memoized in `Board.tsx`).
 
-## Working commands (use Yarn 3 in this repo)
+- Current UI state is local to `src/App.vue` (`title` and `subtitle` in `<script setup lang="ts">`).
+- DOM mount boundary is `index.html` (`#app`) + `src/main.ts`; avoid bypassing this bootstrap path.
+- Unit tests assert rendered output through Vue Test Utils (`mount(App)`) instead of direct DOM mutation.
+- E2E smoke test validates user-visible behavior from the browser (`e2e/smoke.spec.ts`).
+- No central store/API layer exists yet; keep changes simple and colocated unless a real need appears.
+
+## Working commands (use Yarn 4 in this repo)
+
 - Package manager is pinned (`packageManager` + `.yarnrc.yml`): prefer Yarn commands.
 - Install deps:
+
 ```bash
 yarn install
 ```
+
 - Run dev server:
+
 ```bash
 yarn dev
 ```
+
 - Run lint:
+
 ```bash
 yarn lint
 ```
-- Run tests (watch mode by default in `package.json`):
+
+- Run formatting check:
+
 ```bash
-yarn test
+yarn format:check
 ```
-- For CI-like one-shot tests, use:
+
+- Run type-check:
+
 ```bash
-yarn jest --runInBand
+yarn typecheck
+```
+
+- Run unit tests:
+
+```bash
+yarn test:unit
+```
+
+- Run end-to-end tests:
+
+```bash
+yarn test:e2e
+```
+
+- Run full CI-like local check:
+
+```bash
+yarn check
 ```
 
 ## Testing patterns already used
-- Unit + scenario tests for game logic in `module/game/PalmIsland.test.ts`.
-- UI behavior + snapshot tests in `pages/index.test.tsx` and `pages/__snapshots__/index.test.tsx.snap`.
-- Testing stack is Jest + Testing Library (`jest.config.js`, `jest.setup.js`).
-- When changing DOM structure in `Board`/`Layout`, update snapshot expectations intentionally.
+
+- Unit tests live in `src/**/*.spec.ts` (example: `src/App.spec.ts`).
+- Unit testing stack is Vitest + Vue Test Utils with `jsdom` (`vitest.config.ts`).
+- E2E tests live in `e2e/**/*.ts` (example: `e2e/smoke.spec.ts`) and run with Playwright.
+- Playwright uses a local web server (`yarn dev --host 127.0.0.1 --port 4173 --strictPort`) from `playwright.config.ts`.
 
 ## Conventions to preserve
-- TypeScript strictness is enabled (`strict`, `noUnusedLocals`, `noUnusedParameters` in `tsconfig.json`): avoid unused vars and implicit any.
+
+- TypeScript strictness is enabled in both app/node configs (`tsconfig.app.json`, `tsconfig.node.json`): avoid unused vars and implicit any.
 - Formatting baseline comes from `.editorconfig`: 2 spaces, LF, max line length 120.
-- ESLint config is intentionally minimal (`next/core-web-vitals` in `.eslintrc.json`): follow existing code style in touched files.
-- Keep naming consistent with existing boardgame.io terms (`G`, `ctx`, `moves`, `gameover`).
+- ESLint uses flat config in `eslint.config.mjs` with TypeScript + Vue rules and `eslint-config-prettier`.
+- Keep file placement consistent: app code in `src/`, browser tests in `e2e/`, product docs in `docs/`.
 
 ## Change strategy for agents
-- For gameplay changes: edit `module/game/PalmIsland.ts` first, then adapt `module/game/PalmIsland.test.ts`.
-- For board/UI changes: update `components/Board.tsx`, then verify `pages/index.test.tsx` (roles/table structure are asserted).
-- Prefer small, incremental diffs; this codebase is compact and tightly coupled around the game loop.
 
+- For UI changes: update `src/App.vue` first, then adapt `src/App.spec.ts` assertions.
+- For bootstrap or mount changes: edit `src/main.ts` / `index.html`, then re-run `e2e/smoke.spec.ts`.
+- For toolchain updates: keep scripts/config aligned across `package.json`, `vitest.config.ts`, `playwright.config.ts`, and `eslint.config.mjs`.
+- Prefer small, incremental diffs; this codebase is currently a compact starter and easy to validate quickly.

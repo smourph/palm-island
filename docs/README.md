@@ -5,6 +5,7 @@ Ce dossier contient la documentation fonctionnelle de reference pour construire 
 ## Objectif
 
 Fournir une base exploitable pour:
+
 - des developpeurs humains,
 - des agents IA de generation de code,
 - un pilotage produit par exigences fonctionnelles tracables.
@@ -26,6 +27,7 @@ Fournir une base exploitable pour:
 ## Regle d'arbitrage
 
 En cas de divergence entre sources:
+
 - la regle officielle (livret) prime,
 - les ecarts sont consignes dans la section "Ambiguites" de la specification,
 - une decision produit explicite est requise avant implementation.
@@ -35,4 +37,3 @@ En cas de divergence entre sources:
 - Chaque modification importante doit incrementer la section "Historique" des documents impactes.
 - Toute nouvelle exigence doit etre dotee d'un identifiant `REQ-*` unique.
 - Tout cas de test QA doit etre dote d'un identifiant `QA-*` unique et lie a au moins une exigence.
-
